@@ -1,10 +1,7 @@
 // Extensions - Расширения
 @import 'extensions/reset';
-// @import 'extensions/demo.scss';
 
 // Libs - Библиотеки
-
-/* @import "libs/slick"; */
 
 // Variables - Переменные
 @import 'variables/fonts';
@@ -16,5 +13,8 @@
 @import 'variables/UI';
 
 // Sections - Разделы сайта
-@import 'sections/header';
-@import 'sections/footer';
+
+// Modules - Модули
+@import 'modules/header';
+@import 'modules/menu';
+@import 'modules/footer';
