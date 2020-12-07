@@ -1,0 +1,56 @@
+.nav {
+  margin: -15px;
+  display: inline-flex;
+  align-items: baseline;
+
+  @include max-width($touch) {
+    margin: -5px;
+  }
+
+  &--second .nav-link {
+    color: $dark-gray;
+  }
+
+  &--sm {
+    margin: -10px;
+    flex-wrap: wrap;
+    width: 580px;
+
+    @include max-width($phone) {
+      margin: -5px;
+      flex-direction: column;
+      width: auto;
+    }
+
+    .nav-link {
+      margin: 10px;
+      width: calc(50% - 20px);
+      font-weight: 600;
+      font-size: 1rem;
+
+      @include max-width($phone) {
+        margin: 5px;
+        width: calc(100% - 10px);
+      }
+    }
+  }
+}
+
+.nav-link {
+  font-family: $sf;
+  margin: 15px;
+  font-family: $sf;
+  font-weight: bold;
+  font-size: 1.375rem;
+  color: $black-text;
+  transition: color.3s;
+
+  @include max-width($touch) {
+    margin: 5px;
+  }
+
+  &:hover,
+  &.selected {
+    color: $green;
+  }
+}

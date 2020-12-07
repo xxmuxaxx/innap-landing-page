@@ -7,8 +7,6 @@
   }
 }
 
-// .header-wrap {}
-
 .header-top {
   padding: 20px 0;
   display: flex;
@@ -53,38 +51,6 @@
     display: block;
     width: auto;
     height: 100%;
-  }
-}
-
-.nav {
-  margin: -15px;
-  display: inline-flex;
-  align-items: baseline;
-
-  @include max-width($touch) {
-    margin: -5px;
-  }
-
-  &--second .nav-link {
-    color: $dark-gray;
-  }
-}
-
-.nav-link {
-  margin: 15px;
-  font-family: $sf;
-  font-weight: bold;
-  font-size: 1.375rem;
-  color: $black-text;
-  transition: color.3s;
-
-  @include max-width($touch) {
-    margin: 5px;
-  }
-
-  &:hover,
-  &.selected {
-    color: $green;
   }
 }
 

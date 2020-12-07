@@ -1,3 +1,165 @@
 .footer {
-  background-color: $white;
+  margin: 20px 0 60px 0;
+
+  @include max-width($touch) {
+    margin: 20px 0 40px 0;
+  }
+
+  .social {
+    margin: 0 0 60px 0;
+
+    @include max-width($touch) {
+      margin: 0 0 40px 0;
+    }
+  }
+
+  .copyright {
+    margin: 60px 0 0 0;
+
+    @include max-width($touch) {
+      margin: 30px 0 0 0;
+    }
+  }
+}
+
+.footer-wrap {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(109.61deg, #48c9ff 2.51%, #8461f7 45.91%, #ff8a71 91.16%);
+    opacity: 0.5;
+    filter: blur(250px);
+    border-radius: 40px;
+    z-index: -1;
+  }
+}
+
+.social {
+  display: flex;
+
+  @include max-width($phone) {
+    justify-content: space-between;
+  }
+}
+
+.social-icon {
+  width: 140px;
+  min-width: 140px;
+  height: 140px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $yellow;
+  border-radius: 32px;
+
+  @include max-width($tablet) {
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    min-height: 46px;
+    border-radius: 14px;
+  }
+
+  &:not(:last-child) {
+    margin: 0 70px 0 0;
+
+    @include max-width($tablet) {
+      margin: 0 40px 0 0;
+    }
+
+    @include max-width($phone) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .social-icon__svg {
+      transform: scale(1.1);
+    }
+  }
+
+  &__svg {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    min-height: 64px;
+    transition: transform ease 0.3s;
+
+    @include max-width($tablet) {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      min-height: 20px;
+    }
+  }
+
+  &--mail {
+    background-color: rgba($yellow, 0.5);
+
+    .social-icon__svg {
+      width: 70px;
+      min-width: 70px;
+      height: 70px;
+      min-height: 70px;
+
+      @include max-width($tablet) {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        min-height: 24px;
+      }
+    }
+  }
+
+  &--telegram {
+    background-color: rgba(#4c9ad7, 0.4);
+  }
+
+  &--whatsapp {
+    background-color: rgba(#6fd866, 0.3);
+
+    .social-icon__svg {
+      width: 77px;
+      min-width: 77px;
+      height: 77px;
+      min-height: 77px;
+
+      @include max-width($tablet) {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        min-height: 24px;
+      }
+    }
+  }
+
+  &--instagram {
+    background-color: rgba(#f4c1d5, 1);
+  }
+
+  &--facebook {
+    background-color: rgba(#c0cdef, 1);
+  }
+}
+
+.copyright {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $dark-gray;
+
+  @include max-width($phone) {
+    p {
+      margin: 10px 0;
+    }
+  }
 }
