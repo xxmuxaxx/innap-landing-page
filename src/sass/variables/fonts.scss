@@ -1,83 +1,106 @@
-// $fonts-path: '../fonts/';
-// $roboto-path: $fonts-path + 'Roboto/';
+$fonts-path: '../fonts/';
+$sf-path: $fonts-path + 'SFProDisplay/';
+$sfr-path: $fonts-path + 'SFProRounded/';
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path + 'Roboto-Bold.eot');
-//     src: local('Roboto Bold'), local('Roboto-Bold'),
-//         url($roboto-path + 'Roboto-Bold.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path + 'Roboto-Bold.woff') format('woff'),
-//         url($roboto-path + 'Roboto-Bold.ttf') format('truetype');
-//     font-weight: bold;
-//     font-style: normal;
-// }
+// Fonts
+$sf: 'SFProDisplay';
+$sfr: 'SFProRounded';
+$arial: 'Arial';
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path + 'Roboto-Regular.eot');
-//     src: local('Roboto'), local('Roboto-Regular'),
-//         url($roboto-path + 'Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path + 'Roboto-Regular.woff') format('woff'),
-//         url($roboto-path + 'Roboto-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+/* stylelint-disable scss/operator-no-unspaced */
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path + 'Roboto-Medium.eot');
-//     src: local('Roboto Medium'), local('Roboto-Medium'),
-//         url($roboto-path + 'Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path + 'Roboto-Medium.woff') format('woff'),
-//         url($roboto-path + 'Roboto-Medium.ttf') format('truetype');
-//     font-weight: 500;
-//     font-style: normal;
-// }
+// SFProDisplay
+@font-face {
+  font-family: $sf;
+  font-style: normal;
+  font-weight: 300;
+  src: url($sf-path+'SFProDisplay-Light.woff');
+  src: local('SFProDisplay-Light'), local('SFProDisplay-Light'), url($sf-path+'SFProDisplay-Light.woff') format('woff');
+  font-display: swap;
+}
 
+@font-face {
+  font-family: $sf;
+  font-style: normal;
+  font-weight: normal;
+  src: url($sf-path+'SFProDisplay-Regular.woff');
+  src: local('SFProDisplay-Regular'), local('SFProDisplay-Regular'),
+    url($sf-path+'SFProDisplay-Regular.woff') format('woff');
+  font-display: swap;
+}
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path + 'Roboto-Black.eot');
-//     src: local('Roboto Black'), local('Roboto-Black'),
-//         url($roboto-path + 'Roboto-Black.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path + 'Roboto-Black.woff') format('woff'),
-//         url($roboto-path + 'Roboto-Black.ttf') format('truetype');
-//     font-weight: 900;
-//     font-style: normal;
-// }
+@font-face {
+  font-family: $sf;
+  font-style: normal;
+  font-weight: 500;
+  src: url($sf-path+'SFProDisplay-Medium.woff');
+  src: local('SFProDisplay-Medium'), local('SFProDisplay-Medium'),
+    url($sf-path+'SFProDisplay-Medium.woff') format('woff');
+  font-display: swap;
+}
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path + 'Roboto-Light.eot');
-//     src: local('Roboto Light'), local('Roboto-Light'),
-//         url($roboto-path + 'Roboto-Light.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path + 'Roboto-Light.woff') format('woff'),
-//         url($roboto-path + 'Roboto-Light.ttf') format('truetype');
-//     font-weight: 300;
-//     font-style: normal;
-// }
+@font-face {
+  font-family: $sf;
+  font-style: normal;
+  font-weight: 600;
+  src: url($sf-path+'SFProDisplay-SemiBold.woff');
+  src: local('SFProDisplay-SemiBold'), local('SFProDisplay-SemiBold'),
+    url($sf-path+'SFProDisplay-SemiBold.woff') format('woff');
+  font-display: swap;
+}
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path + 'Roboto-Thin.eot');
-//     src: local('Roboto Thin'), local('Roboto-Thin'),
-//         url($roboto-path + 'Roboto-Thin.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path + 'Roboto-Thin.woff') format('woff'),
-//         url($roboto-path + 'Roboto-Thin.ttf') format('truetype');
-//     font-weight: 100;
-//     font-style: normal;
-// }
+@font-face {
+  font-family: $sf;
+  font-style: normal;
+  font-weight: bold;
+  src: url($sf-path+'SFProDisplay-Bold.woff');
+  src: local('SFProDisplay-Bold'), local('SFProDisplay-Bold'), url($sf-path+'SFProDisplay-Bold.woff') format('woff');
+  font-display: swap;
+}
 
-// @font-face {
-//     font-family: 'Roboto';
-//     src: url($roboto-path 'Roboto-ThinItalic.eot');
-//     src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'),
-//         url($roboto-path 'Roboto-ThinItalic.eot?#iefix') format('embedded-opentype'),
-//         url($roboto-path 'Roboto-ThinItalic.woff') format('woff'),
-//         url($roboto-path 'Roboto-ThinItalic.ttf') format('truetype');
-//     font-weight: 100;
-//     font-style: italic;
-// }
+// SFProRounded
 
+@font-face {
+  font-family: $sfr;
+  font-style: normal;
+  font-weight: 300;
+  src: url($sfr-path+'SF-Pro-Rounded-Light.ttf');
+  src: local('SF-Pro-Rounded-Light'), url($sfr-path+'SF-Pro-Rounded-Light.ttf') format('truetype');
+  font-display: swap;
+}
 
-// $roboto: 'Roboto';
+@font-face {
+  font-family: $sfr;
+  font-style: normal;
+  font-weight: normal;
+  src: url($sfr-path+'SF-Pro-Rounded-Regular.ttf');
+  src: local('SF-Pro-Rounded-Regular'), url($sfr-path+'SF-Pro-Rounded-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $sfr;
+  font-style: normal;
+  font-weight: 500;
+  src: url($sfr-path+'SF-Pro-Rounded-Medium.ttf');
+  src: local('SF-Pro-Rounded-Medium'), url($sfr-path+'SF-Pro-Rounded-Medium.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $sfr;
+  font-style: normal;
+  font-weight: 600;
+  src: url($sfr-path+'SF-Pro-Rounded-Semibold.ttf');
+  src: local('SF-Pro-Rounded-Semibold'), url($sfr-path+'SF-Pro-Rounded-Semibold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $sfr;
+  font-style: normal;
+  font-weight: bold;
+  src: url($sfr-path+'SF-Pro-Rounded-Bold.ttf');
+  src: local('SF-Pro-Rounded-Bold'), url($sfr-path+'SF-Pro-Rounded-Bold.ttf') format('truetype');
+  font-display: swap;
+}
