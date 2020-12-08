@@ -24,13 +24,23 @@ button {
   transition: color 0.3s, background-color 0.3s, border 0.3s, box-shadow 0.3s;
   transition-timing-function: ease;
 
-  @include max-width($touch) {
-    padding: $button-padding-sm;
+  // @include max-width($touch) {
+  //   padding: $button-padding-sm;
+  // }
+
+  @include max-width($phone) {
+    font-size: $button-font-size-phone;
+    border-radius: $button-border-radius-phone;
   }
 
   &:hover {
     color: $red;
     background-color: transparent;
+
+    .button__svg {
+      stroke: $red;
+      fill: $red;
+    }
   }
 
   &:focus {
@@ -48,8 +58,23 @@ button {
     }
   }
 
-  svg {
+  &__svg {
+    margin: 0 0 0 20px;
+    height: 30px;
+    min-height: 30px;
+    width: 30px;
+    min-width: 30px;
+    stroke: $white;
+    fill: $white;
     transition: fill 0.3s, transform 0.3s;
+
+    @include max-width($phone) {
+      margin: 0 0 0 10px;
+      height: 16px;
+      min-height: 16px;
+      width: 16px;
+      min-width: 16px;
+    }
   }
 
   &--small {
@@ -64,6 +89,7 @@ button {
     color: $white;
     background-color: $color;
     border: 1px solid $color;
+
     &:hover {
       color: $color;
       background-color: transparent;
@@ -110,6 +136,29 @@ button {
     &:focus {
       outline: 0;
       box-shadow: 0 5px 10px rgba($color, 0.7);
+    }
+  }
+
+  &--gradient {
+    border: none;
+    background-size: 150% auto;
+    background-image: $gradient-rainbow;
+    color: $white;
+    transition: 0.5s;
+
+    &:hover {
+      color: $white;
+      background-position: right center;
+
+      .button__svg {
+        stroke: $white;
+        fill: $white;
+        transform: translateX(10px);
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
     }
   }
 }
