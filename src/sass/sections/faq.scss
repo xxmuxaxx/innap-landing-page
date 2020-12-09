@@ -46,6 +46,84 @@
   }
 }
 
+.faq-item-social-wrapper {
+  @include max-width($phone) {
+    width: 100%;
+  }
+}
+
+.faq-item-social {
+  margin: 0 5px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($orange, 0.5);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken(rgba($orange, 0.5), 10%);
+  }
+
+  &__svg {
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+    min-height: 15px;
+  }
+
+  &--mail {
+    background-color: rgba($yellow, 0.5);
+
+    &:hover {
+      background-color: darken(rgba($yellow, 0.5), 10%);
+    }
+  }
+
+  &--telegram {
+    background-color: rgba(#4c9ad7, 0.4);
+
+    &:hover {
+      background-color: darken(rgba(#4c9ad7, 0.4), 10%);
+    }
+  }
+
+  &--whatsapp {
+    background-color: rgba(#6fd866, 0.3);
+
+    &:hover {
+      background-color: darken(rgba(#6fd866, 0.3), 10%);
+    }
+
+    .faq-item-social__svg {
+      width: 18px;
+      min-width: 18px;
+      height: 18px;
+      min-height: 18px;
+    }
+  }
+
+  &--instagram {
+    background-color: rgba(#f4c1d5, 1);
+
+    &:hover {
+      background-color: darken(rgba(#f4c1d5, 1), 10%);
+    }
+  }
+
+  &--facebook {
+    background-color: rgba(#c0cdef, 1);
+
+    &:hover {
+      background-color: darken(rgba(#c0cdef, 1), 10%);
+    }
+  }
+}
+
 .faq-item-button {
   padding: 30px 0 20px 0;
   cursor: pointer;
@@ -97,6 +175,7 @@
 
   &__wrapper {
     padding: 0 0 30px 0;
+    max-width: 830px;
 
     @include max-width($phone) {
       padding: 0 0 15px 0;
