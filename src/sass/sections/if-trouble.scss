@@ -1,0 +1,115 @@
+// .if-trouble-section {}
+
+// .if-trouble-wrapper {}
+
+.if-trouble-title {
+  margin: 0 0 60px 0;
+  font-weight: bold;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+  color: $black-text;
+
+  @include max-width($phone) {
+    margin: 0 0 30px 0;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  b {
+    display: block;
+    color: $green;
+  }
+}
+
+.if-trouble-list {
+  margin: -40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include max-width($touch) {
+    margin: -15px;
+  }
+
+  @include max-width($phone) {
+    flex-direction: column;
+  }
+}
+
+.if-trouble-item {
+  margin: 40px;
+  display: flex;
+  width: calc(33.3333% - 80px);
+  flex-direction: column;
+
+  @include max-width($touch) {
+    margin: 15px;
+    width: calc(33.3333% - 30px);
+  }
+
+  @include max-width($phone) {
+    width: calc(100% - 30px);
+  }
+
+  .list-icon {
+    margin: 0 0 25px 0;
+
+    @include max-width($phone) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__title {
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: $black-text;
+
+    @include max-width($phone) {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    b {
+      display: block;
+      color: $blue;
+    }
+  }
+
+  &__description {
+    font-family: $sf;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: $dark-gray;
+
+    @include max-width($phone) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &--color {
+    &-green {
+      .list-icon {
+        background-color: $green;
+      }
+
+      .if-trouble-item__title b {
+        color: $green;
+      }
+    }
+
+    &-yellow {
+      .list-icon {
+        background-color: $yellow;
+      }
+
+      .if-trouble-item__title b {
+        color: $yellow;
+      }
+    }
+  }
+}
