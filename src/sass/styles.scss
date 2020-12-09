@@ -2,6 +2,7 @@
 @import 'extensions/reset';
 
 // Libs - Библиотеки
+@import '~swiper/swiper-bundle.css';
 
 // Variables - Переменные
 @import 'variables/fonts';
@@ -15,6 +16,7 @@
 // Sections - Разделы сайта
 @import 'sections/hero';
 @import 'sections/how-it-works';
+@import 'sections/whats-happening';
 
 // Modules - Модули
 @import 'modules/header';
