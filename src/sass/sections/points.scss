@@ -38,9 +38,14 @@
 
 .points-slide {
   display: block;
+  width: 160px;
   border-radius: 50%;
   overflow: hidden;
   cursor: grab;
+
+  @include max-width($phone) {
+    width: 80px;
+  }
 
   img {
     display: block;
