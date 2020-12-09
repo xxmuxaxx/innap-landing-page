@@ -24,10 +24,6 @@ button {
   transition: color 0.3s, background-color 0.3s, border 0.3s, box-shadow 0.3s;
   transition-timing-function: ease;
 
-  // @include max-width($touch) {
-  //   padding: $button-padding-sm;
-  // }
-
   @include max-width($phone) {
     font-size: $button-font-size-phone;
     border-radius: $button-border-radius-phone;
@@ -74,6 +70,23 @@ button {
       min-height: 16px;
       width: 16px;
       min-width: 16px;
+    }
+  }
+
+  &--padding {
+    &-sm {
+      padding: 15px 30px;
+      min-width: auto;
+    }
+  }
+
+  &--svg {
+    &-static {
+      &:hover {
+        .button__svg {
+          transform: none;
+        }
+      }
     }
   }
 

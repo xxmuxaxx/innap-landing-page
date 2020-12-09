@@ -1,0 +1,77 @@
+// .cashback-section {}
+
+// .cashback-wrapper {}
+
+.cashback-subtitle {
+  margin: 0 0 40px 0;
+  font-weight: bold;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+
+  @include max-width($phone) {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.cashback-title {
+  margin: 0 0 60px 0;
+  font-weight: bold;
+  font-size: 5rem;
+  line-height: 5rem;
+
+  @include max-width($phone) {
+    margin: 0 0 30px 0;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  b {
+    display: block;
+    color: $violet;
+  }
+}
+
+.cashback-button {
+  margin: 0 0 40px 0;
+
+  @include max-width($phone) {
+    margin: 0 0 20px 0;
+  }
+}
+
+.cashback-text {
+  max-width: 720px;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.4;
+
+  @include max-width($phone) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  b {
+    position: relative;
+    display: inline-flex;
+    color: $violet;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background-color: $violet;
+      border-radius: 2px;
+
+      @include max-width($phone) {
+        height: 2px;
+        border-radius: 1px;
+      }
+    }
+  }
+}
