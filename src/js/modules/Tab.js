@@ -1,3 +1,5 @@
+import { CountUp } from 'countup.js';
+
 const _instances = {};
 
 export default class TabsController {
@@ -7,6 +9,8 @@ export default class TabsController {
     this.$elsWrap = options.$elsWrap;
     this.$triggers = options.$triggers;
     this.$els = options.$els;
+    this.$additional = options.$additional;
+    this.$additionalItems = options.$additionalItems;
 
     this.init();
   }
@@ -17,6 +21,11 @@ export default class TabsController {
     this.$triggers.forEach(($trigger) => {
       $trigger.addEventListener('click', () => this.open($trigger));
     });
+
+    this.$additional &&
+      this.$additionalItems.forEach((item) => {
+        item.countup = new CountUp(item, item.innerHTML, { startVal: 0 });
+      });
 
     this.open(this.$triggers[0]);
   }
@@ -39,6 +48,19 @@ export default class TabsController {
         $el.classList.remove('active');
       }
     });
+
+    this.$additional &&
+      this.$additionalItems.forEach((item) => {
+        const isCurrent = item.getAttribute('data-additional-tab') === id;
+
+        if (isCurrent) {
+          item.style.display = '';
+          item.countup.start();
+        } else {
+          item.style.display = 'none';
+          item.countup.reset();
+        }
+      });
   }
 
   close() {}
@@ -54,7 +76,11 @@ export default class TabsController {
       const id = $triggersWrap.getAttribute('data-tabs');
       const $triggers = $triggersWrap.querySelectorAll('[data-tab]');
       const $elsWrap = document.querySelector(`[data-tabs-contents="${id}"]`);
+      const $additional = document.querySelector(`[data-additional-tabs="${id}"]`);
+      const $additionalItems = $additional && $additional.querySelectorAll(`[data-additional-tab]`);
+
       if (!$elsWrap) return false;
+
       const $els = $elsWrap.querySelectorAll('[data-tab-content]');
 
       // eslint-disable-next-line no-new
@@ -64,6 +90,8 @@ export default class TabsController {
         $elsWrap,
         $triggers: [...$triggers],
         $els: [...$els],
+        $additional: $additional,
+        $additionalItems: $additional && [...$additionalItems],
       });
     });
   }
