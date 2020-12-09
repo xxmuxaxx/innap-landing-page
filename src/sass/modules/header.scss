@@ -1,21 +1,33 @@
 .header {
-  margin: 20px 0;
-  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  background: transparent;
+  z-index: 5;
+  transition: top 0.2s;
 
-  @include max-width($touch) {
-    margin: 10px 0;
+  &.fixed {
+    @include min-width(900px) {
+      background: $white;
+      padding: 0;
+      top: -100px;
+    }
   }
 }
 
 .header-top {
-  padding: 20px 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  &__wrapper {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-  @include max-width($touch) {
-    padding: 10px 0;
+    @include max-width($touch) {
+      padding: 10px 0;
+    }
   }
 
   .hamburger {
