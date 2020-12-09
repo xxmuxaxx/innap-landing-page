@@ -1,8 +1,12 @@
 .footer {
-  margin: 20px 0 60px 0;
+  padding: 20px 0 60px 0;
+  background-image: url(../img/footer_bg.png);
+  background-size: auto;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 
   @include max-width($touch) {
-    margin: 20px 0 40px 0;
+    padding: 20px 0 40px 0;
   }
 
   .social {
@@ -25,26 +29,50 @@
 .footer-wrap {
   position: relative;
   z-index: 1;
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(109.61deg, #48c9ff 2.51%, #8461f7 45.91%, #ff8a71 91.16%);
-    opacity: 0.5;
-    filter: blur(250px);
-    border-radius: 40px;
-    z-index: -1;
+.footer-text {
+  margin: 0 0 60px 0;
+  font-weight: bold;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+  color: $black-text;
+
+  @include max-width($phone) {
+    margin: 0 0 30px 0;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  b {
+    display: block;
+    color: $orange;
+  }
+}
+
+.footer-phone {
+  margin: 0 0 60px 0;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 3.75rem;
+  color: $black-text;
+  transition: color ease 0.3s;
+
+  @include max-width($phone) {
+    margin: 0 0 30px 0;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  &:hover {
+    color: $dark-gray;
   }
 }
 
 .social {
   display: flex;
 
-  @include max-width($phone) {
+  @include max-width(980px) {
     justify-content: space-between;
   }
 }
@@ -59,8 +87,10 @@
   justify-content: center;
   background-color: $yellow;
   border-radius: 32px;
+  transition: transform 0.1s, box-shadow 0.1s;
+  box-shadow: 0 30px 30px -10px rgba(34, 34, 34, 0.1);
 
-  @include max-width($tablet) {
+  @include max-width(980px) {
     width: 46px;
     min-width: 46px;
     height: 46px;
@@ -71,20 +101,19 @@
   &:not(:last-child) {
     margin: 0 70px 0 0;
 
-    @include max-width($tablet) {
+    @include max-width(1100px) {
       margin: 0 40px 0 0;
     }
 
-    @include max-width($phone) {
-      margin: 0 10px 0 0;
+    @include max-width(980px) {
+      margin: 0;
     }
   }
 
-  &:hover {
-    opacity: 1;
-
-    .social-icon__svg {
-      transform: scale(1.1);
+  @include min-width(980px) {
+    &:hover {
+      box-shadow: 0 40px 30px -10px rgba(34, 34, 34, 0.1);
+      transform: translateY(-10px);
     }
   }
 
@@ -95,7 +124,7 @@
     min-height: 64px;
     transition: transform ease 0.3s;
 
-    @include max-width($tablet) {
+    @include max-width(980px) {
       width: 20px;
       min-width: 20px;
       height: 20px;
@@ -112,7 +141,7 @@
       height: 70px;
       min-height: 70px;
 
-      @include max-width($tablet) {
+      @include max-width(980px) {
         width: 24px;
         min-width: 24px;
         height: 24px;
@@ -134,7 +163,7 @@
       height: 77px;
       min-height: 77px;
 
-      @include max-width($tablet) {
+      @include max-width(980px) {
         width: 24px;
         min-width: 24px;
         height: 24px;
