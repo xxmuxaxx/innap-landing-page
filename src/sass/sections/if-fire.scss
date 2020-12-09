@@ -1,0 +1,61 @@
+// .if-fire-section {}
+
+// .if-fire-wrapper {}
+
+.if-fire-image {
+  margin: 0 0 40px 0;
+  width: 120px;
+  max-width: 120px;
+  height: 120px;
+  max-height: 120px;
+
+  @include max-width($phone) {
+    margin: 0 0 20px 0;
+    width: 70px;
+    max-width: 70px;
+    height: 70px;
+    max-height: 70px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.if-fire-title {
+  font-weight: bold;
+  font-size: 5rem;
+  line-height: 5rem;
+  color: $black-text;
+
+  @include max-width($phone) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  b {
+    display: flex;
+    color: $red;
+    align-items: center;
+  }
+
+  .if-fire-title__line {
+    margin: 0 0 0 5px;
+    height: 60px;
+    width: 4px;
+    background-color: $red;
+    border-radius: 2px;
+    transform: translateY(5px);
+
+    @include max-width($phone) {
+      margin: 0 0 0 2px;
+      height: 26px;
+      width: 2px;
+      border-radius: 1px;
+      transform: translateY(2px);
+    }
+  }
+}

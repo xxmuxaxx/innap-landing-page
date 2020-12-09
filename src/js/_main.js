@@ -9,3 +9,4 @@ import './modules/polyfills/closest';
 
 // modules
 import './modules/Menu';
+import './modules/Flicker';
