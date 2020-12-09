@@ -13,3 +13,4 @@ import './modules/Menu';
 import './modules/Flicker';
 import './modules/Tab';
 import './modules/accordion/accordion';
+import './modules/Countup';

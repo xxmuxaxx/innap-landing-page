@@ -9,6 +9,11 @@
 
   &--second .nav-link {
     color: $dark-gray;
+
+    &:hover,
+    &.selected {
+      color: $black-text;
+    }
   }
 
   &--sm {
