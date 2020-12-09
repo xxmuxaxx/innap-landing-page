@@ -7,6 +7,14 @@
   max-width: $container-max-width;
   padding: $container-padding;
   margin: 0 auto;
+
+  @include max-width($touch) {
+    padding: $container-padding-touch;
+  }
+
+  @include max-width($phone) {
+    padding: $container-padding-phone;
+  }
 }
 
 section {

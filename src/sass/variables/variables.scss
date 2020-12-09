@@ -24,8 +24,10 @@ $phone: 600px;
 $phone-sm: 350px;
 
 // container
-$container-max-width: 1200px;
-$container-padding: 0 15px;
+$container-max-width: 1100px;
+$container-padding: 0 50px;
+$container-padding-touch: 0 20px;
+$container-padding-phone: 0 15px;
 
 // section
 $section-padding: 60px 0;

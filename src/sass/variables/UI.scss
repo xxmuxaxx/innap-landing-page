@@ -160,18 +160,41 @@ button {
     transition: 0.5s;
 
     &:hover {
-      color: $white;
+      color: darken($white, 20%);
       background-position: right center;
 
       .button__svg {
-        stroke: $white;
-        fill: $white;
+        stroke: darken($white, 20%);
+        fill: darken($white, 20%);
         transform: translateX(10px);
       }
     }
 
     &:focus {
       box-shadow: none;
+    }
+  }
+
+  &--white {
+    border-color: $white;
+    background: $white;
+    color: $sea;
+
+    .button__svg {
+      stroke: $sea;
+      fill: $sea;
+    }
+
+    &:hover {
+      border-color: $white;
+      background: $white;
+      color: darken($sea, 20%);
+
+      .button__svg {
+        stroke: darken($sea, 20%);
+        fill: darken($sea, 20%);
+        transform: translateX(10px);
+      }
     }
   }
 }
