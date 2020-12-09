@@ -9,8 +9,9 @@
   transition: top 0.2s;
 
   &.fixed {
+    background: $white;
+
     @include min-width(900px) {
-      background: $white;
       padding: 0;
       top: -100px;
     }

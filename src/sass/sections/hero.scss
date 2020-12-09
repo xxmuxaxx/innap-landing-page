@@ -82,7 +82,7 @@
 
 .hero-image {
   position: relative;
-  margin: 0 0 0 20px;
+  max-width: 280px;
   z-index: 1;
 
   @include max-width($phone) {

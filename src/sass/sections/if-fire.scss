@@ -4,6 +4,7 @@
 
 .if-fire-image {
   margin: 0 0 40px 0;
+  // display: none;
   width: 120px;
   max-width: 120px;
   height: 120px;
@@ -35,27 +36,28 @@
     font-size: 32px;
     line-height: 32px;
   }
+}
 
-  b {
-    display: flex;
-    color: $red;
-    align-items: center;
+.if-fire-strings {
+  font-weight: bold;
+  font-size: 5rem;
+  line-height: 5rem;
+  color: $red;
+
+  @include max-width($phone) {
+    font-size: 32px;
+    line-height: 32px;
   }
+}
 
-  .if-fire-title__line {
-    margin: 0 0 0 5px;
-    height: 60px;
-    width: 4px;
-    background-color: $red;
-    border-radius: 2px;
-    transform: translateY(5px);
+.typed-cursor {
+  font-weight: 300;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  color: $red;
 
-    @include max-width($phone) {
-      margin: 0 0 0 2px;
-      height: 26px;
-      width: 2px;
-      border-radius: 1px;
-      transform: translateY(2px);
-    }
+  @include max-width($phone) {
+    font-size: 28px;
+    line-height: 28px;
   }
 }
