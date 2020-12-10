@@ -3,30 +3,35 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 0;
+  padding: 45px 0 20px 0;
   background: $white;
   z-index: 5;
   transition: top 0.2s;
 
+  @include max-width($touch) {
+    padding: 10px 0;
+  }
+
   &.fixed {
     @include min-width(900px) {
-      padding: 0;
-      top: -100px;
+      padding: 20px 0;
+      top: -90px;
     }
   }
 }
 
 .header-top {
+  padding: 0 0 35px 0;
+
+  @include max-width($touch) {
+    padding: 0;
+  }
+
   &__wrapper {
-    padding: 20px 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
-    @include max-width($touch) {
-      padding: 10px 0;
-    }
   }
 
   .hamburger {
@@ -35,7 +40,6 @@
 }
 
 .header-bottom {
-  padding: 20px 0;
   display: flex;
   flex-direction: row;
   align-items: baseline;

@@ -1,4 +1,10 @@
-// .if-trouble-section {}
+.if-trouble-section {
+  padding: 60px 0 120px 0;
+
+  @include max-width($phone) {
+    padding: 30px 0;
+  }
+}
 
 // .if-trouble-wrapper {}
 

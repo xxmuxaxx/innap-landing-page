@@ -1,4 +1,10 @@
-// .cashback-section {}
+.cashback-section {
+  padding: 90px 0 60px 0;
+
+  @include max-width($phone) {
+    padding: 30px 0;
+  }
+}
 
 // .cashback-wrapper {}
 
@@ -35,9 +41,34 @@
 
 .cashback-button {
   margin: 0 0 40px 0;
+  padding: 15px 30px;
+  width: 240px;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 70px;
+  color: $white;
 
   @include max-width($phone) {
     margin: 0 0 20px 0;
+    padding: 8px 20px;
+    width: 140px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  img {
+    margin: 0 0 0 15px;
+    height: 50px;
+    min-height: 50px;
+    width: 50px;
+    min-width: 50px;
+
+    @include max-width($phone) {
+      height: 24px;
+      min-height: 24px;
+      width: 24px;
+      min-width: 24px;
+    }
   }
 }
 

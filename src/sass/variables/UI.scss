@@ -80,16 +80,6 @@ button {
     }
   }
 
-  &--svg {
-    &-static {
-      &:hover {
-        .button__svg {
-          transform: none;
-        }
-      }
-    }
-  }
-
   &--small {
     min-width: $button-small-min-width;
     padding: $button-small-padding;
@@ -160,13 +150,12 @@ button {
     transition: 0.5s;
 
     &:hover {
-      color: darken($white, 20%);
+      color: $white;
       background-position: right center;
 
       .button__svg {
-        stroke: darken($white, 20%);
-        fill: darken($white, 20%);
-        transform: translateX(10px);
+        stroke: $white;
+        fill: $white;
       }
     }
 
@@ -195,6 +184,12 @@ button {
         fill: darken($sea, 20%);
         transform: translateX(10px);
       }
+    }
+  }
+
+  &--static {
+    &:hover {
+      background-position: inherit;
     }
   }
 }

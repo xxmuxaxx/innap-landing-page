@@ -4,6 +4,7 @@ class Header {
   constructor($header) {
     this.$header = $header;
     this.currentScroll = window.pageYOffset;
+    this.flag = 0;
 
     this._init();
   }
@@ -26,7 +27,8 @@ class Header {
 
         this.currentScroll = window.scrollY;
 
-        window.addEventListener('mousewheel', (event) => this.checkPosition(event));
+        // window.addEventListener('mousewheel', (event) => this.checkPosition(event));
+        window.addEventListener('scroll', (event) => this.checkPosition(event));
 
         this._isTransitionEnd = true;
       },
@@ -47,19 +49,17 @@ class Header {
   }
 
   checkPosition(event) {
-    try {
-      if (event.wheelDelta >= 0) {
-        // && window.scrollY < this.currentScroll + 100
-        this.$header.classList.remove('fixed');
-        // this.currentScroll = window.scrollY;
-      } else if (event.wheelDelta < 0) {
-        // && window.scrollY > this.currentScroll + 100
-        this.$header.classList.add('fixed');
-        // this.currentScroll = window.scrollY;
-      }
+    if (window.pageYOffset > this.currentScroll && window.pageYOffset > this.flag + 100) {
+      this.$header.classList.add('fixed');
 
-      this.currentScroll = window.pageYOffset;
-    } catch {}
+      this.flag = window.pageYOffset;
+    } else if (window.pageYOffset < this.currentScroll && window.pageYOffset < this.flag - 100) {
+      this.$header.classList.remove('fixed');
+
+      this.flag = window.pageYOffset;
+    }
+
+    this.currentScroll = window.pageYOffset;
   }
 
   addPadding() {

@@ -11,6 +11,7 @@ export default class TabsController {
     this.$els = options.$els;
     this.$additional = options.$additional;
     this.$additionalItems = options.$additionalItems;
+    this.activeAdditionalItem = null;
 
     this.init();
   }
@@ -50,15 +51,22 @@ export default class TabsController {
     });
 
     this.$additional &&
-      this.$additionalItems.forEach((item) => {
+      this.$additionalItems.forEach((item, index) => {
         const isCurrent = item.getAttribute('data-additional-tab') === id;
 
         if (isCurrent) {
           item.style.display = '';
           item.countup.start();
+          this.activeAdditionalItem = index;
+
+          this.$additionalItems.forEach((item, index) => {
+            if (index !== this.activeAdditionalItem) {
+              item.countup.reset();
+              item.countup.startVal = this.$additionalItems[this.activeAdditionalItem].countup.endVal;
+            }
+          });
         } else {
           item.style.display = 'none';
-          item.countup.reset();
         }
       });
   }

@@ -2,6 +2,10 @@
   position: relative;
   overflow: hidden;
 
+  @include min-width($touch) {
+    min-height: calc(100vh - 182px);
+  }
+
   &::after {
     content: '';
     position: absolute;

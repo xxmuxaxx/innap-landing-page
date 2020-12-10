@@ -1,5 +1,10 @@
 .whats-happening-section {
+  padding: 90px 0;
   overflow: hidden;
+
+  @include max-width($phone) {
+    padding: 30px 0;
+  }
 }
 
 .whats-happening-title {

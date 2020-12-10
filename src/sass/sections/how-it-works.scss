@@ -1,4 +1,10 @@
-// .how-it-works-section {}
+.how-it-works-section {
+  padding: 110px 0 90px 0;
+
+  @include max-width($phone) {
+    padding: 40px 0 30px 0;
+  }
+}
 
 // .how-it-works-wrapper {}
 

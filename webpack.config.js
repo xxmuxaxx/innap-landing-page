@@ -113,13 +113,13 @@ const config = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 30,
+                quality: 100,
               },
               optipng: {
                 enabled: true,
               },
               pngquant: {
-                quality: 20,
+                quality: 100,
                 speed: 1,
               },
             },
@@ -154,16 +154,11 @@ const config = {
             },
           },
         ],
-        include: [
-          path.resolve(__dirname, 'src/img'),
-          path.resolve(__dirname, 'node_modules'),
-        ],
+        include: [path.resolve(__dirname, 'src/img'), path.resolve(__dirname, 'node_modules')],
       },
     ],
   },
-  plugins: isDevelopment
-    ? [...plugins, new webpack.HotModuleReplacementPlugin()]
-    : [...plugins],
+  plugins: isDevelopment ? [...plugins, new webpack.HotModuleReplacementPlugin()] : [...plugins],
   optimization: isProduction
     ? {
         minimizer: [
