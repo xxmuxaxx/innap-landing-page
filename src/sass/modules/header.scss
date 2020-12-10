@@ -4,13 +4,11 @@
   left: 0;
   right: 0;
   padding: 20px 0;
-  background: transparent;
+  background: $white;
   z-index: 5;
   transition: top 0.2s;
 
   &.fixed {
-    background: $white;
-
     @include min-width(900px) {
       padding: 0;
       top: -100px;

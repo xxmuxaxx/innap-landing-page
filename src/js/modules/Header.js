@@ -24,7 +24,9 @@ class Header {
         this.addPadding();
         this.checkPosition();
 
-        window.addEventListener('scroll', () => this.checkPosition());
+        this.currentScroll = window.scrollY;
+
+        window.addEventListener('mousewheel', (event) => this.checkPosition(event));
 
         this._isTransitionEnd = true;
       },
@@ -44,22 +46,24 @@ class Header {
     });
   }
 
-  checkPosition() {
-    window.pageYOffset !== 0 ? this.$header.classList.add('fixed') : this.$header.classList.remove('fixed');
+  checkPosition(event) {
+    try {
+      if (event.wheelDelta >= 0) {
+        // && window.scrollY < this.currentScroll + 100
+        this.$header.classList.remove('fixed');
+        // this.currentScroll = window.scrollY;
+      } else if (event.wheelDelta < 0) {
+        // && window.scrollY > this.currentScroll + 100
+        this.$header.classList.add('fixed');
+        // this.currentScroll = window.scrollY;
+      }
 
-    this.currentScroll = window.pageYOffset;
+      this.currentScroll = window.pageYOffset;
+    } catch {}
   }
 
   addPadding() {
-    const $body = document.body;
-    $body.style.paddingTop = '';
-
-    const paddingTop = Number(
-      // eslint-disable-next-line no-undef
-      getComputedStyle($body).paddingTop.replace(/[^\d]/g, '')
-    );
-
-    $body.style.paddingTop = paddingTop + this.$header.clientHeight + 'px';
+    document.body.style.paddingTop = this.$header.clientHeight + 'px';
   }
 
   checkTouch() {

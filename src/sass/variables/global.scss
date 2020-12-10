@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  padding-top: 232px;
+}
+
 .container {
   width: 100%;
   max-width: $container-max-width;

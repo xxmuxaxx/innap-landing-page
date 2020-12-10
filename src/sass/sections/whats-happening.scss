@@ -36,7 +36,6 @@
   background-color: #f1f1f4;
   border-radius: 32px;
   overflow: hidden;
-  cursor: grab;
 
   @include max-width($phone) {
     padding: 30px 10px;

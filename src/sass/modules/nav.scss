@@ -36,6 +36,7 @@
       @include max-width($phone) {
         margin: 5px;
         width: calc(100% - 10px);
+        font-size: 14px;
       }
     }
   }

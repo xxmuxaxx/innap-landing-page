@@ -23,6 +23,7 @@ class Countup {
   init() {
     this.startAnimate = this.startAnimate.bind(this);
     document.addEventListener('scroll', this.startAnimate);
+    document.addEventListener('transitionend', this.startAnimate);
   }
 
   startAnimate() {
@@ -30,6 +31,7 @@ class Countup {
       setTimeout(() => this.countup.start(), this.delay);
 
       document.removeEventListener('scroll', this.startAnimate);
+      document.removeEventListener('transitionend', this.startAnimate);
     }
   }
 

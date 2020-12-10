@@ -182,11 +182,14 @@
 }
 
 .copyright {
+  font-family: $sf;
   font-size: 1rem;
   line-height: 1.5;
   color: $dark-gray;
 
   @include max-width($phone) {
+    font-size: 12px;
+
     p {
       margin: 10px 0;
     }
