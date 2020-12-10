@@ -35,13 +35,13 @@
 
 .menu-wrapper {
   position: relative;
-  display: block;
+  display: flex;
   height: 100%;
-  padding: 20px 15px;
+  padding: 20px 15px 40px;
   overflow-x: hidden;
 
   @include max-width($tablet) {
-    padding: 10px 15px;
+    padding: 10px 15px 20px;
   }
 
   @include scrollbar(4px, $green, transparent, 0);
@@ -129,6 +129,9 @@
 
 .menu-wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   text-align: center;
   background-color: $white;
@@ -136,21 +139,20 @@
   .nav {
     display: flex;
     flex-direction: column;
-    margin: 40px -5px;
+    margin: 40px 0;
+
+    &:last-child {
+      margin: 40px 0 0 0;
+    }
 
     &-link {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px 15px;
-      font-size: 14px;
-      border-radius: 13px;
-      transition: background-color 0.3s, color 0.3s;
+      margin: 0;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 30px;
 
-      &.selected,
-      &:hover {
-        color: $white;
-        background-color: $green;
+      &:not(:last-child) {
+        margin: 0 0 20px 0;
       }
     }
   }

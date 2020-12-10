@@ -6,6 +6,10 @@
     min-height: calc(100vh - 182px);
   }
 
+  @include max-width($phone) {
+    padding: 70px 0 110px 0;
+  }
+
   &::after {
     content: '';
     position: absolute;

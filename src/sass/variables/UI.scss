@@ -188,6 +188,7 @@ button {
   }
 
   &--static {
+    background-size: 100% auto;
     &:hover {
       background-position: inherit;
     }

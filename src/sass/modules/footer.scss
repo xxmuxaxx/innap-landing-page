@@ -1,12 +1,35 @@
 .footer {
+  position: relative;
   padding: 20px 0 60px 0;
-  background-image: url(../img/footer_bg.png);
-  background-size: auto;
-  background-position: bottom center;
-  background-repeat: no-repeat;
+  overflow: hidden;
 
   @include max-width($touch) {
     padding: 20px 0 40px 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    height: 500px;
+    background: linear-gradient(109.61deg, #48c9ff 2.51%, #8461f7 45.91%, #ff8a71 91.16%);
+    opacity: 0.9;
+    filter: blur(250px);
+    border-radius: 40px;
+    transform: translateY(450px);
+
+    @include max-width($phone) {
+      width: 320px;
+      height: 320px;
+      background: linear-gradient(109.61deg, #48c9ff 2.51%, #8461f7 45.91%, #ff8a71 91.16%);
+      filter: blur(120px);
+      transform: translateY(180px);
+    }
   }
 
   .social {
@@ -96,6 +119,7 @@
     height: 46px;
     min-height: 46px;
     border-radius: 14px;
+    box-shadow: none;
   }
 
   &:not(:last-child) {

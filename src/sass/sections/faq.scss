@@ -54,7 +54,13 @@
 
 .faq-item-social-wrapper {
   @include max-width($phone) {
+    margin: 10px 0;
+    display: block;
     width: 100%;
+  }
+
+  ~ br {
+    display: none;
   }
 }
 
