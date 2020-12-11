@@ -59,10 +59,6 @@
     display: block;
     width: 100%;
   }
-
-  ~ br {
-    display: none;
-  }
 }
 
 .faq-item-social {
@@ -211,6 +207,14 @@
 
       @include max-width($phone) {
         margin: 0 0 20px 0;
+      }
+    }
+
+    br {
+      line-height: 0;
+
+      @include max-width($phone) {
+        display: none;
       }
     }
   }
