@@ -181,6 +181,7 @@
 }
 
 .faq-item-list {
+  height: 100%;
   max-height: 0;
   overflow: hidden;
   transition: max-height ease 0.3s;
@@ -188,6 +189,7 @@
   &__wrapper {
     padding: 0 0 30px 0;
     max-width: 830px;
+    font-family: $sf;
 
     @include max-width($phone) {
       padding: 0 0 15px 0;

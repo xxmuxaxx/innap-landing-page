@@ -32,7 +32,7 @@
   margin: 0 -80px 60px -80px;
 
   @include max-width($phone) {
-    margin: 0 -15px 30px -15px;
+    margin: 0 0 30px 0;
     overflow: inherit;
   }
 }

@@ -13,6 +13,9 @@ class Countup {
       duration: this.duration,
     });
 
+    console.log(this.delay);
+    console.log(this.duration);
+
     this.init();
   }
 
@@ -42,7 +45,7 @@ class Countup {
       elements.forEach((element) => {
         const value = element.dataset.countup;
         const delay = element.dataset.delay || 0;
-        const duration = element.dataset.duration || 2;
+        const duration = element.dataset.duration || 1;
         const id = element.id;
 
         // eslint-disable-next-line no-new

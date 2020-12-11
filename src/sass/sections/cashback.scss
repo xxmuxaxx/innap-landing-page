@@ -49,6 +49,7 @@
   font-size: 60px;
   line-height: 70px;
   color: $white;
+  border-radius: 32px;
 
   @include max-width($phone) {
     margin: 0 0 20px 0;
@@ -56,6 +57,7 @@
     width: 134px;
     font-size: 32px;
     line-height: 38px;
+    border-radius: 16px;
   }
 
   img {
