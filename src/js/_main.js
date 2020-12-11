@@ -20,3 +20,4 @@ import './modules/accordion/accordion';
 import './modules/Countup';
 import './modules/Typed';
 import './modules/Scroll';
+import './modules/Modal';

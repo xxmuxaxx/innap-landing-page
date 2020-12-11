@@ -6,21 +6,20 @@
   display: block;
   width: 100vw;
   height: 100vh;
-  padding: 20px;
   overflow: auto;
   overflow-x: hidden;
   overflow-y: auto;
   font-size: 0;
-  text-align: center;
   white-space: nowrap;
   visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
   opacity: 0;
   transition: opacity 0.3s, visibility 0.4s;
 
-  @media (max-width: 768px) {
-    padding: 15px;
+  @include max-width($touch) {
+    padding: 25px 10px;
   }
+
   &::before {
     display: inline-block;
     height: 100%;
@@ -40,11 +39,9 @@
     position: relative;
     z-index: 11;
     display: inline-block;
+    min-width: 100%;
     width: 100%;
-    max-width: 480px;
-    padding: 50px 20px;
-    font-size: 1rem;
-    text-align: center;
+    height: 100%;
     white-space: normal;
     vertical-align: middle;
     background-color: #fff;
@@ -52,25 +49,89 @@
     transition: opacity 0.4s, transform 0.4s;
     transform: scale(0.6);
 
-    @media (max-width: 992px) {
-      padding: 30px 20px;
+    @include max-width($touch) {
+      border-radius: 32px;
     }
+  }
+}
 
-    @media (max-width: 768px) {
-      padding: 30px 15px;
+.modal-content {
+  padding: 155px 0 0 0;
+
+  @include max-width($touch) {
+    padding: 70px 0 0 0;
+  }
+}
+
+.modal-title {
+  margin: 0 0 70px 0;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 90px;
+  color: #222222;
+
+  @include max-width($touch) {
+    margin: 0 0 25px 0;
+    max-width: 300px;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  br {
+    display: none;
+
+    @include max-width($touch) {
+      display: block;
     }
-    &--small {
-      max-width: 480px;
-    }
-    &--medium {
-      max-width: 540px;
-    }
-    &--large {
-      max-width: 740px;
-    }
-    &--no-padding {
-      padding-right: 0;
-      padding-left: 0;
-    }
+  }
+}
+
+.modal-counter {
+  margin: 0 0 70px 0;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 90px;
+  background: linear-gradient(109.61deg, #48c9ff 2.51%, #8461f7 45.91%, #ff8a71 91.16%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include max-width($touch) {
+    margin: 0 0 25px 0;
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.modal-button {
+  height: 80px;
+  width: 420px;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  color: #ffffff;
+  border-radius: 24px;
+
+  @include max-width($touch) {
+    padding: 15px;
+    height: 54px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 16px;
+    background-size: 100% auto;
+  }
+
+  @include max-width($phone) {
+    padding: 15px;
+    height: 54px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 16px;
+    background-size: 100% auto;
   }
 }

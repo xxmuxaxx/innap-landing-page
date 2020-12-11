@@ -10,17 +10,20 @@ class Scroll {
     this.$element.addEventListener('click', (event) => {
       event.preventDefault();
 
-      let temp;
-
-      // if (window.matchMedia('(min-width: 900px)').matches) {
-      //   temp = document.querySelector('.header').classList.contains('fixed') ? 60 : 180;
-      // } else {
-      //   temp = 60;
-      // }
+      let temp = 50;
 
       const scrollTarget = document.querySelector(this.$link);
       const elementPosition = scrollTarget.getBoundingClientRect().top;
-      const offsetPosition = elementPosition - 60;
+
+      if (elementPosition < 0) {
+        temp = 190;
+      }
+
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        temp = 100;
+      }
+
+      const offsetPosition = elementPosition - temp;
 
       window.scrollBy({
         top: offsetPosition,
