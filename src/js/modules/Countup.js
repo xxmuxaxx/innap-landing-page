@@ -13,9 +13,6 @@ class Countup {
       duration: this.duration,
     });
 
-    console.log(this.delay);
-    console.log(this.duration);
-
     this.init();
   }
 

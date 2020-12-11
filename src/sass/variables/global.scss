@@ -3,7 +3,11 @@
 }
 
 body {
-  padding-top: 232px;
+  padding-top: 190px;
+
+  @include max-width($phone) {
+    padding-top: 100px;
+  }
 }
 
 .container {

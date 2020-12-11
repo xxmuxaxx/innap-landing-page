@@ -12,15 +12,16 @@ export default class Accordion {
     // eslint-disable-next-line no-undef
     this.maxHeightHiddenEl = getComputedStyle(this.$hiddenEl).maxHeight.replace(/[^\d]/g, '');
 
-    this.sliderInstance = this.$el.getAttribute('data-accordion-in-slider');
-
     this._isOpen = false;
+    this._isOpenOnLoad = this.$el.classList.contains('active');
 
     this.init();
   }
 
   init() {
     _instances[this.id] = this;
+
+    if (this._isOpenOnLoad) this.open();
 
     setTimeout(() => {
       if (this.$hiddenEl.scrollHeight < this.maxHeightHiddenEl) {
@@ -39,18 +40,24 @@ export default class Accordion {
       });
     }
 
-    AccordionObserver.subscribe(this.close.bind(this));
+    // document.addEventListener('click', (e) => {
+    //   let isTargetofChild = Helper.isDescendant(this.$el, e.target);
+
+    //   if(this._isOpen && !isTargetofChild){
+    //     this.close();
+    //   }
+    // });
+
+    // AccordionObserver.subscribe(this.close.bind(this));
   }
 
   open() {
     if (this._isOpen) return false;
 
-    AccordionObserver.broadcast();
+    // AccordionObserver.broadcast();
 
     this.$el.classList.add('active');
     this.$hiddenEl.style.maxHeight = this.$hiddenEl.scrollHeight + 'px';
-
-    this.updateHeight();
 
     this._isOpen = true;
   }
@@ -61,15 +68,7 @@ export default class Accordion {
     this.$el.classList.remove('active');
     this.$hiddenEl.style.maxHeight = '';
 
-    this.updateHeight();
-
     this._isOpen = false;
-  }
-
-  updateHeight() {
-    if (this.sliderInstance && window[this.sliderInstance]) {
-      window[this.sliderInstance].updateAutoHeight(300);
-    }
   }
 
   static initAll() {
@@ -77,7 +76,7 @@ export default class Accordion {
 
     $els.forEach((el) => {
       const id = el.getAttribute('data-accordion');
-      const $hiddenEl = el.querySelector('.accordion-list');
+      const $hiddenEl = el.querySelector('.accordion-content');
       const $triggerBtn = el.querySelector('.accordion-button');
 
       // eslint-disable-next-line no-new
