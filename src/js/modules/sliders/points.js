@@ -6,7 +6,6 @@ new Swiper('.points-slider-wrapper', {
   slidesPerView: 'auto',
   autoplay: {
     delay: 5000,
-    reverseDirection: true,
   },
 
   breakpoints: {

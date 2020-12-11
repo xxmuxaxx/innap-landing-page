@@ -33,23 +33,17 @@ export default class ClassToggler {
   superInit() {
     // Bind toggle btns
     if (this.$toggleBtns.length) {
-      this.$toggleBtns.forEach(($btn) =>
-        $btn.addEventListener('click', this.toggle.bind(this))
-      );
+      this.$toggleBtns.forEach(($btn) => $btn.addEventListener('click', this.toggle.bind(this)));
     }
 
     // bind open btns
     if (this.$openBtns.length) {
-      this.$openBtns.forEach(($btn) =>
-        $btn.addEventListener('click', this.open.bind(this))
-      );
+      this.$openBtns.forEach(($btn) => $btn.addEventListener('click', this.open.bind(this)));
     }
 
     // bind close btns
     if (this.$closeBtns.length) {
-      this.$closeBtns.forEach(($btn) =>
-        $btn.addEventListener('click', this.close.bind(this))
-      );
+      this.$closeBtns.forEach(($btn) => $btn.addEventListener('click', this.close.bind(this)));
     }
 
     // bind close by document click
@@ -60,11 +54,10 @@ export default class ClassToggler {
 
   open(e) {
     this.$el.classList.add(this.htmlClass);
+    this.$toggleBtns.forEach((item) => item.classList.add(this.htmlClass));
 
     if (this.$additionalElements.length) {
-      this.$additionalElements.forEach(($el) =>
-        $el.classList.add(this.htmlClass)
-      );
+      this.$additionalElements.forEach(($el) => $el.classList.add(this.htmlClass));
     }
 
     if (this.scrollLock) {
@@ -83,11 +76,10 @@ export default class ClassToggler {
 
   close(e) {
     this.$el.classList.remove(this.htmlClass);
+    this.$toggleBtns.forEach((item) => item.classList.remove(this.htmlClass));
 
     if (this.$additionalElements.length) {
-      this.$additionalElements.forEach(($el) =>
-        $el.classList.remove(this.htmlClass)
-      );
+      this.$additionalElements.forEach(($el) => $el.classList.remove(this.htmlClass));
     }
 
     if (this.scrollLock) {
@@ -126,11 +118,7 @@ export default class ClassToggler {
 
   _isTargetTriggerBtns(e) {
     // check, if e.target one of our btns (open, close or toggle);
-    const allTriggersBtns = [
-      ...this.$toggleBtns,
-      ...this.$openBtns,
-      ...this.$closeBtns,
-    ];
+    const allTriggersBtns = [...this.$toggleBtns, ...this.$openBtns, ...this.$closeBtns];
 
     for (const $btn of allTriggersBtns) {
       if (Helper.isDescendant($btn, e.target)) {
@@ -165,8 +153,7 @@ export default class ClassToggler {
 }
 
 const errors = {
-  set_id:
-    'You need set id, use "id" on html element, or pass it in options (must bee a uniq string)',
+  set_id: 'You need set id, use "id" on html element, or pass it in options (must bee a uniq string)',
 };
 
 const defaultOptions = {

@@ -5,17 +5,20 @@
   right: 0;
   padding: 45px 0 20px 0;
   background: $white;
-  z-index: 5;
-  transition: top 0.2s;
+  z-index: 10;
+  transition: top 0.2s, padding 0.2s;
 
   @include max-width($touch) {
-    padding: 10px 0;
+    padding: 40px 0 20px 0;
   }
 
   &.fixed {
-    @include min-width(900px) {
+    top: -90px;
+    padding: 20px 0;
+
+    @include max-width($touch) {
+      top: 0;
       padding: 20px 0;
-      top: -90px;
     }
   }
 }
@@ -70,6 +73,7 @@
 }
 
 .hamburger {
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -82,10 +86,23 @@
   border: none;
   outline: none;
 
-  &:hover,
   &.active {
-    .hamburger__item {
-      background-color: $green;
+    height: 40px;
+
+    .hamburger__item:nth-child(1) {
+      position: absolute;
+      top: calc(50% - 4px);
+      transform: rotate(45deg);
+    }
+
+    .hamburger__item:nth-child(2) {
+      display: none;
+    }
+
+    .hamburger__item:nth-child(3) {
+      position: absolute;
+      top: calc(50% - 4px);
+      transform: rotate(-45deg);
     }
   }
 
@@ -96,7 +113,7 @@
     margin: 1.5px 0;
     background-color: $black;
     border-radius: 1.5px;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
   }
 
   @include min-width($touch) {

@@ -17,25 +17,33 @@
   }
 
   &--sm {
-    margin: -10px;
-    flex-wrap: wrap;
-    width: 580px;
+    margin: 0;
+    width: 100%;
+    columns: 2;
 
     @include max-width($phone) {
-      margin: -5px;
       flex-direction: column;
-      width: auto;
+    }
+
+    .nav-col {
+      margin: -6px;
+      min-width: calc(210px + 12px);
+      display: flex;
+      flex-direction: column;
+
+      @include max-width($phone) {
+        margin: 0 -6px;
+      }
     }
 
     .nav-link {
-      margin: 10px;
-      width: calc(50% - 20px);
+      margin: 6px;
       font-weight: 600;
       font-size: 1rem;
+      line-height: 20px;
 
       @include max-width($phone) {
         margin: 5px;
-        width: calc(100% - 10px);
         font-size: 14px;
       }
     }

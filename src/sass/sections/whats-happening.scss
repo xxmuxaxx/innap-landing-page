@@ -45,6 +45,7 @@
   @include max-width($phone) {
     padding: 30px 10px;
     width: 120px;
+    border-radius: 16px;
   }
 
   &::before {

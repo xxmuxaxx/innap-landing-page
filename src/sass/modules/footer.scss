@@ -208,14 +208,21 @@
 .copyright {
   font-family: $sf;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 28px;
   color: $dark-gray;
+
+  @include min-width($phone) {
+    br {
+      display: none;
+    }
+  }
 
   @include max-width($phone) {
     font-size: 12px;
+    line-height: 18px;
 
-    p {
-      margin: 10px 0;
+    p:not(:last-child) {
+      margin: 0 0 20px 0;
     }
   }
 }

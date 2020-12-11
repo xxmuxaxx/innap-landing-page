@@ -10,7 +10,6 @@
 
 .if-fire-image {
   margin: 0 0 40px 0;
-  // display: none;
   width: 120px;
   max-width: 120px;
   height: 120px;
@@ -33,6 +32,7 @@
 }
 
 .if-fire-title {
+  margin: 0;
   font-weight: bold;
   font-size: 5rem;
   line-height: 5rem;

@@ -228,8 +228,13 @@
   margin: 40px 0 0 0;
 
   @include max-width($phone) {
+    padding: 10px 25px;
     width: 100%;
-    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  &:hover .button__svg {
+    transform: none;
   }
 }
 
