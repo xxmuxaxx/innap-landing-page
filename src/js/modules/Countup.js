@@ -7,9 +7,10 @@ class Countup {
     this.value = Number(options.value);
     this.delay = Number(options.delay);
     this.duration = Number(options.duration);
+    this.start = Number(options.start);
     this.id = String(options.id);
     this.countup = new CountUp(this.id, this.value, {
-      startVal: 0,
+      startVal: this.start || 0,
       duration: this.duration,
     });
 
@@ -43,6 +44,7 @@ class Countup {
         const value = element.dataset.countup;
         const delay = element.dataset.delay || 0;
         const duration = element.dataset.duration || 1;
+        const start = element.dataset.start || 0;
         const id = element.id;
 
         // eslint-disable-next-line no-new
@@ -51,6 +53,7 @@ class Countup {
           value: value,
           delay: delay,
           duration: duration,
+          start: start,
           id: id,
         });
       });
