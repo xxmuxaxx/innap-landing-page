@@ -6,9 +6,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   font-size: 0;
   white-space: nowrap;
   visibility: hidden;
@@ -56,7 +54,7 @@
 }
 
 .modal-content {
-  padding: 155px 0 175px 0;
+  padding: 125px 0 60px 0;
 
   @include max-width($touch) {
     padding: 70px 0 60px 0;
