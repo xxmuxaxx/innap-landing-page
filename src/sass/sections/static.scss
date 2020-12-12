@@ -1,0 +1,81 @@
+.static-section {
+  padding: 70px 0 100px 0;
+
+  @include max-width($phone) {
+    padding: 55px 0 70px 0;
+  }
+}
+
+.static-title {
+  margin: 0 0 40px 0;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+  color: $black-text;
+
+  @include max-width($phone) {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+.static-subtitle {
+  margin: 0 0 40px 0;
+  font-family: $sf;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+  color: $black-text;
+
+  @include max-width($phone) {
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.static-text {
+  font-family: $sf;
+  font-size: 20px;
+  line-height: 32px;
+  color: $black-text;
+
+  @include max-width($phone) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  p:not(:last-child) {
+    margin: 0 0 10px 0;
+  }
+
+  a {
+    color: $blue;
+    transition: color 0.3s;
+
+    &:hover {
+      color: darken($blue, 20%);
+      text-decoration: underline;
+    }
+  }
+
+  b {
+    font-weight: 600;
+  }
+  ul {
+    &:not(:last-child) {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  li::before {
+    content: '•';
+    margin: 0 6px 0 2px;
+  }
+
+  li:not(:last-child) {
+    margin: 0 0 10px 0;
+  }
+}
