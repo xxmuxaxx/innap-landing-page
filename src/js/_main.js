@@ -2,7 +2,6 @@ import './modules/Loader';
 
 // default
 import './../sass/styles.scss';
-// import 'smooth-corners';
 import './modules/_svg';
 
 // polyfills
