@@ -17,9 +17,9 @@ class Typed {
 
     this.typedJs = new TypedJs(`#${this.output.id}`, {
       stringsElement: `#${this.text.id}`,
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 2000,
+      typeSpeed: 70,
+      backSpeed: 70,
+      backDelay: 1200,
       loop: true,
       preStringTyped: (arrayPos) =>
         this.images.forEach((img, index) => {
