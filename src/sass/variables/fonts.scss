@@ -63,36 +63,9 @@ $arial: 'Arial';
 @font-face {
   font-family: $sfr;
   font-style: normal;
-  font-weight: 300;
-  src: url($sfr-path+'SF-Pro-Rounded-Light.ttf');
-  src: local('SF-Pro-Rounded-Light'), url($sfr-path+'SF-Pro-Rounded-Light.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $sfr;
-  font-style: normal;
   font-weight: normal;
   src: url($sfr-path+'SF-Pro-Rounded-Regular.ttf');
   src: local('SF-Pro-Rounded-Regular'), url($sfr-path+'SF-Pro-Rounded-Regular.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $sfr;
-  font-style: normal;
-  font-weight: 500;
-  src: url($sfr-path+'SF-Pro-Rounded-Medium.ttf');
-  src: local('SF-Pro-Rounded-Medium'), url($sfr-path+'SF-Pro-Rounded-Medium.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $sfr;
-  font-style: normal;
-  font-weight: 600;
-  src: url($sfr-path+'SF-Pro-Rounded-Semibold.ttf');
-  src: local('SF-Pro-Rounded-Semibold'), url($sfr-path+'SF-Pro-Rounded-Semibold.ttf') format('truetype');
   font-display: swap;
 }
 
