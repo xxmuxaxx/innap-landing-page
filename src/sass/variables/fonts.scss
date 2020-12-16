@@ -64,8 +64,8 @@ $arial: 'Arial';
   font-family: $sfr;
   font-style: normal;
   font-weight: normal;
-  src: url($sfr-path+'SF-Pro-Rounded-Regular.ttf');
-  src: local('SF-Pro-Rounded-Regular'), url($sfr-path+'SF-Pro-Rounded-Regular.ttf') format('truetype');
+  src: url($sfr-path+'SF-Pro-Rounded-Regular.woff');
+  src: local('SF-Pro-Rounded-Regular'), url($sfr-path+'SF-Pro-Rounded-Regular.woff') format('woff');
   font-display: swap;
 }
 
@@ -73,7 +73,7 @@ $arial: 'Arial';
   font-family: $sfr;
   font-style: normal;
   font-weight: bold;
-  src: url($sfr-path+'SF-Pro-Rounded-Bold.ttf');
-  src: local('SF-Pro-Rounded-Bold'), url($sfr-path+'SF-Pro-Rounded-Bold.ttf') format('truetype');
+  src: url($sfr-path+'SF-Pro-Rounded-Bold.woff');
+  src: local('SF-Pro-Rounded-Bold'), url($sfr-path+'SF-Pro-Rounded-Bold.woff') format('woff');
   font-display: swap;
 }
