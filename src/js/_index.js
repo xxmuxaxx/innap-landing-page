@@ -10,7 +10,7 @@ Modal.setOpenCallback('modal', () => {
   const modal = document.querySelector('#modal');
   const output = modal.querySelector('.modal-counter');
   const dateFrom = new Date();
-  const dateTo = new Date(2020, 11, 16, 9, 0, 0);
+  const dateTo = new Date(2020, 11, 25, 9, 0, 0);
 
   const result = dateTo - dateFrom + 1000;
 
